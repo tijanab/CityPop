@@ -1,5 +1,8 @@
 import './App.css';
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
@@ -9,6 +12,8 @@ function App() {
           CityPop
         </p>
       </header>
+        <Button variant="secondary" size="lg">Search by city</Button>
+        <Button variant="secondary" size="lg">Search by country</Button>
     </div>
   );
 }
