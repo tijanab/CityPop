@@ -1,21 +1,29 @@
 import './App.css';
-import React from "react";
-import Button from 'react-bootstrap/Button';
+import React, {Component} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import Country from "./Country";
+import City from "./City";
+import Start from "./Start";
 
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div className="App">
+                    <header className="App-header">
+                        CityPop
+                    </header>
+                    <Switch>
+                        <Route exact path="/" component={Start}/>
+                        <Route path="/city" component={City}/>
+                        <Route path="/country" component={Country}/>
+                    </Switch>
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          CityPop
-        </p>
-      </header>
-        <Button variant="secondary" size="lg">Search by city</Button>
-        <Button variant="secondary" size="lg">Search by country</Button>
-    </div>
-  );
+                </div>
+            </Router>
+        );
+    }
 }
 
 export default App;
